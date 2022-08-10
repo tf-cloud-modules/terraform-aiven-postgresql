@@ -9,7 +9,7 @@ This document describes the current status of this project.
 | ✔ | [Add tag section]() ||
 | ✔ | [Add pg_user_config block]() ||
 | ✔ | [Add pg_user_config.migration block]() ||
-| ❌ | [Add pg_user_config.pg block]() |`in progress`|
+| ✔ | [Add pg_user_config.pg block]() ||
 | ❌ | [Add pg_user_config.pgbouncer block]() |`in progress`|
 | ❌ | [Add pg_user_config.pglookout block]() |`in progress`|
 | ❌ | [Add pg_user_config.private_access block]() |`in progress`|
