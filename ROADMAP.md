@@ -7,7 +7,7 @@ This document describes the current status of this project.
 | :---: | :--- | --- | 
 | ✔ | [Set up basic module features]() || 
 | ✔ | [Add tag section]() ||
-| ❌ | [Add pg_user_config block]() |`in progress`|
+| ✔ | [Add pg_user_config block]() |`in progress`|
 | ❌ | [Add pg_user_config.migration block]() |`in progress`|
 | ❌ | [Add pg_user_config.pg block]() |`in progress`|
 | ❌ | [Add pg_user_config.pgbouncer block]() |`in progress`|
@@ -20,3 +20,6 @@ This document describes the current status of this project.
 | ❌ | [Add pg_database module]() |`in progress`|
 | ❌ | [Add pg_user module]() |`in progress`|
 | ❌ | [Add outputs]() |`in progress`|
+| ❌ | [Add private_access block]() |`in progress`|
+| ❌ | [Add privatelink_access block]() |`in progress`|
+| ❌ | [Add public_access block]() |`in progress`|
