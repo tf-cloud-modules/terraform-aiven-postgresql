@@ -7,8 +7,8 @@ This document describes the current status of this project.
 | :---: | :--- | --- | 
 | ✔ | [Set up basic module features]() || 
 | ✔ | [Add tag section]() ||
-| ✔ | [Add pg_user_config block]() |`in progress`|
-| ❌ | [Add pg_user_config.migration block]() |`in progress`|
+| ✔ | [Add pg_user_config block]() ||
+| ✔ | [Add pg_user_config.migration block]() ||
 | ❌ | [Add pg_user_config.pg block]() |`in progress`|
 | ❌ | [Add pg_user_config.pgbouncer block]() |`in progress`|
 | ❌ | [Add pg_user_config.pglookout block]() |`in progress`|

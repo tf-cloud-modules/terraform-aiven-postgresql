@@ -21,6 +21,17 @@ resource "aiven_pg" "this" {
     synchronous_replication   = var.synchronous_replication
     variant                   = var.variant
     work_mem                  = var.work_mem
+
+    migration {
+      dbname     = var.migration_dbname
+      host       = var.migration_host
+      ignore_dbs = var.migration_ignore_dbs
+      method     = var.migration_method
+      password   = var.migration_password
+      port       = var.migration_port
+      ssl        = var.migration_ssl
+      username   = var.migration_username
+    }
   }
 
   dynamic "service_integrations" {
@@ -37,5 +48,10 @@ resource "aiven_pg" "this" {
       key   = lookup(service_integrations.value, "key", null)
       value = lookup(service_integrations.value, "value", null)
     }
+  }
+
+  lifecycle {
+    # We are ignoring a migration block to it's one-off nature.
+    ignore_changes = [pg_user_config["migration"]]
   }
 }
