@@ -6,7 +6,7 @@ Terraform module which creates Aiven PostgreSQL resources
 
 ```hcl
 module "redis" {
-  source  = "tf-cloud-modules/postgresql/aiven"
+  source       = "tf-cloud-modules/postgresql/aiven"
   project      = "test"
   service_name = "test"
 }
