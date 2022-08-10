@@ -72,6 +72,7 @@ No modules.
 | <a name="input_log_min_duration_statement"></a> [log\_min\_duration\_statement](#input\_log\_min\_duration\_statement) | log\_min\_duration\_statement | `string` | `""` | no |
 | <a name="input_maintenance_window_dow"></a> [maintenance\_window\_dow](#input\_maintenance\_window\_dow) | Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc. | `string` | `"thursday"` | no |
 | <a name="input_maintenance_window_time"></a> [maintenance\_window\_time](#input\_maintenance\_window\_time) | Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format. | `string` | `"01:00:00"` | no |
+| <a name="input_max_background_workers"></a> [max\_background\_workers](#input\_max\_background\_workers) | timescaledb.max\_background\_workers | `string` | `""` | no |
 | <a name="input_max_failover_replication_time_lag"></a> [max\_failover\_replication\_time\_lag](#input\_max\_failover\_replication\_time\_lag) | max\_failover\_replication\_time\_lag | `string` | `""` | no |
 | <a name="input_max_files_per_process"></a> [max\_files\_per\_process](#input\_max\_files\_per\_process) | max\_files\_per\_process | `string` | `""` | no |
 | <a name="input_max_locks_per_transaction"></a> [max\_locks\_per\_transaction](#input\_max\_locks\_per\_transaction) | max\_locks\_per\_transaction | `string` | `""` | no |
@@ -101,9 +102,18 @@ No modules.
 | <a name="input_pg_stat_statements__dot__track"></a> [pg\_stat\_statements\_\_dot\_\_track](#input\_pg\_stat\_statements\_\_dot\_\_track) | n/a | `string` | `""` | no |
 | <a name="input_pg_version"></a> [pg\_version](#input\_pg\_version) | PostgreSQL major version. | `string` | `"14"` | no |
 | <a name="input_plan"></a> [plan](#input\_plan) | Defines what kind of computing resources are allocated for the service. | `string` | `"startup-4"` | no |
+| <a name="input_private_access_pg"></a> [private\_access\_pg](#input\_private\_access\_pg) | Allow clients to connect to pg with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
+| <a name="input_private_access_pgbouncer"></a> [private\_access\_pgbouncer](#input\_private\_access\_pgbouncer) | Allow clients to connect to pgbouncer with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
+| <a name="input_private_access_prometheus"></a> [private\_access\_prometheus](#input\_private\_access\_prometheus) | Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses. | `bool` | `false` | no |
+| <a name="input_privatelink_pg"></a> [privatelink\_pg](#input\_privatelink\_pg) | Enable pg. | `bool` | `false` | no |
+| <a name="input_privatelink_pgbouncer"></a> [privatelink\_pgbouncer](#input\_privatelink\_pgbouncer) | Enable pgbouncer. | `bool` | `false` | no |
+| <a name="input_privatelink_prometheus"></a> [privatelink\_prometheus](#input\_privatelink\_prometheus) | Enable prometheus. | `bool` | `false` | no |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name | `string` | n/a | yes |
 | <a name="input_project_to_fork_from"></a> [project\_to\_fork\_from](#input\_project\_to\_fork\_from) | Name of another project to fork a service from. | `string` | `""` | no |
 | <a name="input_project_vpc_id"></a> [project\_vpc\_id](#input\_project\_vpc\_id) | Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC. | `string` | `null` | no |
+| <a name="input_public_access_pg"></a> [public\_access\_pg](#input\_public\_access\_pg) | Allow clients to connect to pg from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
+| <a name="input_public_access_pgbouncer"></a> [public\_access\_pgbouncer](#input\_public\_access\_pgbouncer) | Allow clients to connect to pgbouncer from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
+| <a name="input_public_access_prometheus"></a> [public\_access\_prometheus](#input\_public\_access\_prometheus) | Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network. | `bool` | `false` | no |
 | <a name="input_recovery_target_time"></a> [recovery\_target\_time](#input\_recovery\_target\_time) | Recovery target time when forking a service. | `string` | `""` | no |
 | <a name="input_server_idle_timeout"></a> [server\_idle\_timeout](#input\_server\_idle\_timeout) | server\_idle\_timeout | `string` | `""` | no |
 | <a name="input_server_lifetime"></a> [server\_lifetime](#input\_server\_lifetime) | server\_lifetime | `string` | `""` | no |

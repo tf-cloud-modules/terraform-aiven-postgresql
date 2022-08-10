@@ -514,3 +514,63 @@ variable "max_failover_replication_time_lag" {
   default     = ""
 }
 
+variable "public_access_prometheus" {
+  description = "Allow clients to connect to prometheus from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "public_access_pg" {
+  description = "Allow clients to connect to pg from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "public_access_pgbouncer" {
+  description = "Allow clients to connect to pgbouncer from the public internet for service nodes that are in a project VPC or another type of private network."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_prometheus" {
+  description = "Allow clients to connect to prometheus with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_pg" {
+  description = "Allow clients to connect to pg with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
+
+variable "private_access_pgbouncer" {
+  description = "Allow clients to connect to pgbouncer with a DNS name that always resolves to the service's private IP addresses."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_prometheus" {
+  description = "Enable prometheus."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_pg" {
+  description = "Enable pg."
+  type        = bool
+  default     = false
+}
+
+variable "privatelink_pgbouncer" {
+  description = "Enable pgbouncer."
+  type        = bool
+  default     = false
+}
+
+variable "max_background_workers" {
+  description = "timescaledb.max_background_workers"
+  type        = string
+  default     = ""
+}
+ 
