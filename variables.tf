@@ -453,3 +453,64 @@ variable "wal_writer_delay" {
   type        = string
   default     = ""
 }
+
+variable "autodb_idle_timeout" {
+  description = "autodb_idle_timeout"
+  type        = string
+  default     = ""
+}
+
+variable "autodb_max_db_connections" {
+  description = "autodb_max_db_connections"
+  type        = string
+  default     = ""
+}
+
+variable "autodb_pool_mode" {
+  description = "autodb_pool_mode"
+  type        = string
+  default     = ""
+}
+
+variable "autodb_pool_size" {
+  description = "autodb_pool_size"
+  type        = string
+  default     = ""
+}
+
+variable "ignore_startup_parameters" {
+  description = "ignore_startup_parameters"
+  type        = list(string)
+  default     = []
+}
+
+variable "min_pool_size" {
+  description = "min_pool_size"
+  type        = string
+  default     = ""
+}
+
+variable "server_idle_timeout" {
+  description = "server_idle_timeout"
+  type        = string
+  default     = ""
+}
+
+variable "server_lifetime" {
+  description = "server_lifetime"
+  type        = string
+  default     = ""
+}
+
+variable "server_reset_query_always" {
+  description = "server_reset_query_always"
+  type        = string
+  default     = ""
+}
+
+variable "max_failover_replication_time_lag" {
+  description = "max_failover_replication_time_lag"
+  type        = string
+  default     = ""
+}
+

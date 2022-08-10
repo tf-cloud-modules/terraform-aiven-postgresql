@@ -81,6 +81,22 @@ resource "aiven_pg" "this" {
       wal_sender_timeout                  = var.wal_sender_timeout
       wal_writer_delay                    = var.wal_writer_delay
     }
+
+    pgbouncer {
+      autodb_idle_timeout       = var.autodb_idle_timeout
+      autodb_max_db_connections = var.autodb_max_db_connections
+      autodb_pool_mode          = var.autodb_pool_mode
+      autodb_pool_size          = var.autodb_pool_size
+      ignore_startup_parameters = var.ignore_startup_parameters
+      min_pool_size             = var.min_pool_size
+      server_idle_timeout       = var.server_idle_timeout
+      server_lifetime           = var.server_lifetime
+      server_reset_query_always = var.server_reset_query_always
+    }
+
+    pglookout {
+      max_failover_replication_time_lag = var.max_failover_replication_time_lag
+    }
   }
 
   dynamic "service_integrations" {
