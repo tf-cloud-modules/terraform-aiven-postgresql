@@ -34,6 +34,56 @@ variable "maintenance_window_time" {
   default     = "01:00:00"
 }
 
+variable "migration_dbname" {
+  description = "Database name for bootstrapping the initial connection."
+  type        = string
+  default     = ""
+}
+
+variable "migration_host" {
+  description = "Hostname or IP address of the server where to migrate data from."
+  type        = string
+  default     = ""
+}
+
+variable "migration_ignore_dbs" {
+  description = "Comma-separated list of databases, which should be ignored during migration."
+  type        = string
+  default     = ""
+}
+
+variable "migration_method" {
+  description = "The migration method to be used."
+  type        = string
+  default     = ""
+}
+
+variable "migration_password" {
+  description = "Password for authentication with the server where to migrate data from."
+  sensitive   = true
+  type        = string
+  default     = ""
+}
+
+variable "migration_port" {
+  description = "Port number of the server where to migrate data from."
+  type        = string
+  default     = ""
+}
+
+variable "migration_ssl" {
+  description = "The server where to migrate data from is secured with SSL."
+  type        = string
+  default     = ""
+}
+
+variable "migration_username" {
+  description = "User name for authentication with the server where to migrate data."
+  type        = string
+  default     = ""
+}
+
+
 variable "pg_version" {
   description = "PostgreSQL major version."
   type        = string
@@ -87,7 +137,7 @@ variable "service_integrations" {
 }
 
 variable "service_to_fork_from" {
-  description = "Name of another service to fork from.."
+  description = "Name of another service to fork from."
   type        = string
   default     = ""
 }
