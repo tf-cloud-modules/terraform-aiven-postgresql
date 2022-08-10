@@ -16,7 +16,7 @@ This document describes the current status of this project.
 | ✔ | [Add pg_user_config.privatelink_access block]() ||
 | ✔ | [Add pg_user_config.timescaledb block]() ||
 | ✔ | [Add service_integrations block]() ||
-| ❌ | [Add examples]() |`in progress`|
-| ❌ | [Add pg_database module]() |`in progress`|
-| ❌ | [Add pg_user module]() |`in progress`|
+| ✔ | [Add examples]() |`in progress`|
+| ✔ | [Add pg_database module]() |`in progress`|
+| ✔ | [Add pg_user module]() |`in progress`|
 | ✔ | [Add outputs]() ||
