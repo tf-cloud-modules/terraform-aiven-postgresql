@@ -97,6 +97,28 @@ resource "aiven_pg" "this" {
     pglookout {
       max_failover_replication_time_lag = var.max_failover_replication_time_lag
     }
+
+    public_access {
+      prometheus = var.public_access_prometheus
+      pg         = var.public_access_pg
+      pgbouncer  = var.public_access_pgbouncer
+    }
+
+    private_access {
+      prometheus = var.private_access_prometheus
+      pg         = var.private_access_pg
+      pgbouncer  = var.private_access_pgbouncer
+    }
+
+    privatelink_access {
+      prometheus = var.privatelink_prometheus
+      pg         = var.privatelink_pg
+      pgbouncer  = var.privatelink_pgbouncer
+    }
+
+    timescaledb {
+      max_background_workers = var.max_background_workers
+    }
   }
 
   dynamic "service_integrations" {
