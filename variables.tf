@@ -10,6 +10,18 @@ variable "cloud_name" {
   default     = "aws-us-east-1"
 }
 
+variable "enable_ipv6" {
+  description = "Enable IPv6."
+  type        = string
+  default     = "false"
+}
+
+variable "ip_filter" {
+  description = "IP filter."
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+}
+
 variable "maintenance_window_dow" {
   description = "Day of week when maintenance operations should be performed. One monday, tuesday, wednesday, etc."
   type        = string
@@ -20,6 +32,12 @@ variable "maintenance_window_time" {
   description = "Time of day when maintenance operations should be performed. UTC time in HH:mm:ss format."
   type        = string
   default     = "01:00:00"
+}
+
+variable "pg_version" {
+  description = "PostgreSQL major version."
+  type        = string
+  default     = "14"
 }
 
 variable "plan" {
@@ -33,10 +51,22 @@ variable "project" {
   type        = string
 }
 
+variable "project_to_fork_from" {
+  description = "Name of another project to fork a service from."
+  type        = string
+  default     = ""
+}
+
 variable "project_vpc_id" {
   description = "Specifies the VPC the service should run in. If the value is not set the service is not run inside a VPC."
   type        = string
   default     = null
+}
+
+variable "recovery_target_time" {
+  description = "Recovery target time when forking a service."
+  type        = string
+  default     = ""
 }
 
 variable "static_ips" {
@@ -56,6 +86,24 @@ variable "service_integrations" {
   default     = []
 }
 
+variable "service_to_fork_from" {
+  description = "Name of another service to fork from.."
+  type        = string
+  default     = ""
+}
+
+variable "shared_buffers_percentage" {
+  description = "shared_buffers_percentage."
+  type        = string
+  default     = ""
+}
+
+variable "synchronous_replication" {
+  description = "Synchronous replication type."
+  type        = string
+  default     = ""
+}
+
 variable "tags" {
   description = "List of the service tags."
   type        = list(any)
@@ -66,4 +114,16 @@ variable "termination_protection" {
   description = "Prevents the service from being deleted."
   type        = bool
   default     = false
+}
+
+variable "variant" {
+  description = "Variant of the PostgreSQL service, may affect the features that are exposed by default."
+  type        = string
+  default     = ""
+}
+
+variable "work_mem" {
+  description = "work_mem."
+  type        = string
+  default     = ""
 }

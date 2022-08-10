@@ -10,6 +10,19 @@ resource "aiven_pg" "this" {
   service_name            = var.service_name
   termination_protection  = var.termination_protection
 
+  pg_user_config {
+    enable_ipv6               = var.enable_ipv6
+    ip_filter                 = var.ip_filter
+    pg_version                = var.pg_version
+    project_to_fork_from      = var.project_to_fork_from
+    recovery_target_time      = var.recovery_target_time
+    service_to_fork_from      = var.service_to_fork_from
+    shared_buffers_percentage = var.shared_buffers_percentage
+    synchronous_replication   = var.synchronous_replication
+    variant                   = var.variant
+    work_mem                  = var.work_mem
+  }
+
   dynamic "service_integrations" {
     for_each = var.service_integrations
     content {
