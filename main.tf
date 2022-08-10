@@ -32,6 +32,55 @@ resource "aiven_pg" "this" {
       ssl        = var.migration_ssl
       username   = var.migration_username
     }
+
+    pg {
+      autovacuum_analyze_scale_factor     = var.autovacuum_analyze_scale_factor
+      autovacuum_analyze_threshold        = var.autovacuum_analyze_threshold
+      autovacuum_freeze_max_age           = var.autovacuum_freeze_max_age
+      autovacuum_max_workers              = var.autovacuum_max_workers
+      autovacuum_naptime                  = var.autovacuum_naptime
+      autovacuum_vacuum_cost_delay        = var.autovacuum_vacuum_cost_delay
+      autovacuum_vacuum_cost_limit        = var.autovacuum_vacuum_cost_limit
+      autovacuum_vacuum_scale_factor      = var.autovacuum_vacuum_scale_factor
+      autovacuum_vacuum_threshold         = var.autovacuum_vacuum_threshold
+      bgwriter_delay                      = var.bgwriter_delay
+      bgwriter_flush_after                = var.bgwriter_flush_after
+      bgwriter_lru_maxpages               = var.bgwriter_lru_maxpages
+      bgwriter_lru_multiplier             = var.bgwriter_lru_multiplier
+      deadlock_timeout                    = var.deadlock_timeout
+      default_toast_compression           = var.default_toast_compression
+      idle_in_transaction_session_timeout = var.idle_in_transaction_session_timeout
+      jit                                 = var.jit
+      log_autovacuum_min_duration         = var.log_autovacuum_min_duration
+      log_error_verbosity                 = var.log_error_verbosity
+      log_line_prefix                     = var.log_line_prefix
+      log_min_duration_statement          = var.log_min_duration_statement
+      max_files_per_process               = var.max_files_per_process
+      max_locks_per_transaction           = var.max_locks_per_transaction
+      max_logical_replication_workers     = var.max_logical_replication_workers
+      max_parallel_workers                = var.max_parallel_workers
+      max_parallel_workers_per_gather     = var.max_parallel_workers_per_gather
+      max_pred_locks_per_transaction      = var.max_pred_locks_per_transaction
+      max_prepared_transactions           = var.max_prepared_transactions
+      max_replication_slots               = var.max_replication_slots
+      max_slot_wal_keep_size              = var.max_slot_wal_keep_size
+      max_stack_depth                     = var.max_stack_depth
+      max_standby_archive_delay           = var.max_standby_archive_delay
+      max_standby_streaming_delay         = var.max_standby_streaming_delay
+      max_wal_senders                     = var.max_wal_senders
+      max_worker_processes                = var.max_worker_processes
+      pg_partman_bgw__dot__interval       = var.pg_partman_bgw__dot__interval
+      pg_partman_bgw__dot__role           = var.pg_partman_bgw__dot__role
+      pg_stat_statements__dot__track      = var.pg_stat_statements__dot__track
+      temp_file_limit                     = var.temp_file_limit
+      timezone                            = var.timezone
+      track_activity_query_size           = var.track_activity_query_size
+      track_commit_timestamp              = var.track_commit_timestamp
+      track_functions                     = var.track_functions
+      track_io_timing                     = var.track_io_timing
+      wal_sender_timeout                  = var.wal_sender_timeout
+      wal_writer_delay                    = var.wal_writer_delay
+    }
   }
 
   dynamic "service_integrations" {
