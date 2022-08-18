@@ -5,6 +5,12 @@ module "pg" {
   source       = "../.."
   project      = var.project
   service_name = var.service_name
+  tags = [
+    {
+      key   = "env"
+      value = "test"
+    }
+  ]
 }
 
 module "pg_user" {
