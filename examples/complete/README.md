@@ -20,10 +20,7 @@ Note that this example may create resources which cost money. Run `terraform des
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 3.0.0 |
+No requirements.
 
 ## Providers
 
@@ -45,11 +42,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
-| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the service database. | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
-| <a name="input_service_name"></a> [service\_name](#input\_service\_name) | Specifies the actual name of the service. | `string` | n/a | yes |
-| <a name="input_username"></a> [username](#input\_username) | The actual name of the PG User. | `string` | n/a | yes |
 
 ## Outputs
 
