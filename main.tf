@@ -22,15 +22,18 @@ resource "aiven_pg" "this" {
     variant                   = var.variant
     work_mem                  = var.work_mem
 
-    migration {
-      dbname     = var.migration_dbname
-      host       = var.migration_host
-      ignore_dbs = var.migration_ignore_dbs
-      method     = var.migration_method
-      password   = var.migration_password
-      port       = var.migration_port
-      ssl        = var.migration_ssl
-      username   = var.migration_username
+    dynamic "migration" {
+      for_each = var.migration
+      content {
+        dbname     = lookup(migration.value, "dbname", null)
+        host       = lookup(migration.value, "host", null)
+        ignore_dbs = lookup(migration.value, "ignore_dbs", null)
+        method     = lookup(migration.value, "method", null)
+        password   = lookup(migration.value, "password", null)
+        port       = lookup(migration.value, "port", null)
+        ssl        = lookup(migration.value, "ssl", null)
+        username   = lookup(migration.value, "username", null)
+      }
     }
 
     pg {
