@@ -34,56 +34,6 @@ variable "maintenance_window_time" {
   default     = "01:00:00"
 }
 
-variable "migration_dbname" {
-  description = "Database name for bootstrapping the initial connection."
-  type        = string
-  default     = ""
-}
-
-variable "migration_host" {
-  description = "Hostname or IP address of the server where to migrate data from."
-  type        = string
-  default     = ""
-}
-
-variable "migration_ignore_dbs" {
-  description = "Comma-separated list of databases, which should be ignored during migration."
-  type        = string
-  default     = ""
-}
-
-variable "migration_method" {
-  description = "The migration method to be used."
-  type        = string
-  default     = ""
-}
-
-variable "migration_password" {
-  description = "Password for authentication with the server where to migrate data from."
-  sensitive   = true
-  type        = string
-  default     = ""
-}
-
-variable "migration_port" {
-  description = "Port number of the server where to migrate data from."
-  type        = string
-  default     = ""
-}
-
-variable "migration_ssl" {
-  description = "The server where to migrate data from is secured with SSL."
-  type        = string
-  default     = ""
-}
-
-variable "migration_username" {
-  description = "User name for authentication with the server where to migrate data."
-  type        = string
-  default     = ""
-}
-
-
 variable "pg_version" {
   description = "PostgreSQL major version."
   type        = string
@@ -144,8 +94,8 @@ variable "service_to_fork_from" {
 
 variable "shared_buffers_percentage" {
   description = "shared_buffers_percentage."
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "synchronous_replication" {
@@ -173,93 +123,93 @@ variable "variant" {
 }
 
 variable "work_mem" {
-  description = "work_mem."
-  type        = string
-  default     = ""
+  description = "work_mem"
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_analyze_scale_factor" {
   description = "autovacuum_analyze_scale_factor"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_analyze_threshold" {
   description = "autovacuum_analyze_threshold"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_freeze_max_age" {
   description = "autovacuum_freeze_max_age"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_max_workers" {
   description = "autovacuum_max_workers"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_naptime" {
   description = "autovacuum_naptime"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_vacuum_cost_delay" {
   description = "autovacuum_vacuum_cost_delay"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_vacuum_cost_limit" {
   description = "autovacuum_vacuum_cost_limit"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_vacuum_scale_factor" {
   description = "autovacuum_vacuum_scale_factor"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autovacuum_vacuum_threshold" {
   description = "autovacuum_vacuum_threshold"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "bgwriter_delay" {
   description = "bgwriter_delay"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "bgwriter_flush_after" {
   description = "bgwriter_flush_after"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "bgwriter_lru_maxpages" {
   description = "bgwriter_lru_maxpages"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "bgwriter_lru_multiplier" {
   description = "bgwriter_lru_multiplier"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "deadlock_timeout" {
   description = "deadlock_timeout"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "default_toast_compression" {
@@ -270,20 +220,20 @@ variable "default_toast_compression" {
 
 variable "idle_in_transaction_session_timeout" {
   description = "idle_in_transaction_session_timeout"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "jit" {
   description = "jit"
-  type        = string
-  default     = ""
+  type        = bool
+  default     = null
 }
 
 variable "log_autovacuum_min_duration" {
   description = "log_autovacuum_min_duration"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "log_error_verbosity" {
@@ -300,98 +250,98 @@ variable "log_line_prefix" {
 
 variable "log_min_duration_statement" {
   description = "log_min_duration_statement"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_files_per_process" {
   description = "max_files_per_process"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_locks_per_transaction" {
   description = "max_locks_per_transaction"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_logical_replication_workers" {
   description = "max_logical_replication_workers"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_parallel_workers" {
   description = "max_parallel_workers"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_parallel_workers_per_gather" {
   description = "max_parallel_workers_per_gather"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_pred_locks_per_transaction" {
   description = "max_pred_locks_per_transaction"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_prepared_transactions" {
   description = "max_prepared_transactions"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_replication_slots" {
   description = "max_replication_slots"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_slot_wal_keep_size" {
   description = "max_slot_wal_keep_size"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "max_stack_depth" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "max_stack_depth"
+  type        = number
+  default     = null
 }
 
 variable "max_standby_archive_delay" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "max_standby_archive_delay"
+  type        = number
+  default     = null
 }
 
 variable "max_standby_streaming_delay" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "max_standby_streaming_delay"
+  type        = number
+  default     = null
 }
 
 variable "max_wal_senders" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "max_wal_senders"
+  type        = number
+  default     = null
 }
 
 variable "max_worker_processes" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "max_worker_processes"
+  type        = number
+  default     = null
 }
 
 variable "pg_partman_bgw__dot__interval" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "pg_partman_bgw__dot__interval"
+  type        = number
+  default     = null
 }
 
 variable "pg_partman_bgw__dot__role" {
@@ -401,69 +351,69 @@ variable "pg_partman_bgw__dot__role" {
 }
 
 variable "pg_stat_statements__dot__track" {
-  description = ""
+  description = "pg_stat_statements__dot__track"
   type        = string
   default     = ""
 }
 
 variable "temp_file_limit" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "temp_file_limit"
+  type        = number
+  default     = null
 }
 
 variable "timezone" {
-  description = ""
+  description = "timezone"
   type        = string
   default     = ""
 }
 
 variable "track_activity_query_size" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "track_activity_query_size"
+  type        = number
+  default     = null
 }
 
 variable "track_commit_timestamp" {
-  description = ""
+  description = "track_commit_timestamp"
   type        = string
   default     = ""
 }
 
 variable "track_functions" {
-  description = ""
+  description = "track_functions"
   type        = string
   default     = ""
 }
 
 variable "track_io_timing" {
-  description = ""
+  description = "track_io_timing"
   type        = string
   default     = ""
 }
 
 variable "wal_sender_timeout" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "wal_sender_timeout"
+  type        = number
+  default     = null
 }
 
 variable "wal_writer_delay" {
-  description = ""
-  type        = string
-  default     = ""
+  description = "wal_writer_delay"
+  type        = number
+  default     = null
 }
 
 variable "autodb_idle_timeout" {
   description = "autodb_idle_timeout"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autodb_max_db_connections" {
   description = "autodb_max_db_connections"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "autodb_pool_mode" {
@@ -474,8 +424,8 @@ variable "autodb_pool_mode" {
 
 variable "autodb_pool_size" {
   description = "autodb_pool_size"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "ignore_startup_parameters" {
@@ -486,32 +436,32 @@ variable "ignore_startup_parameters" {
 
 variable "min_pool_size" {
   description = "min_pool_size"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "server_idle_timeout" {
   description = "server_idle_timeout"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "server_lifetime" {
   description = "server_lifetime"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "server_reset_query_always" {
   description = "server_reset_query_always"
-  type        = string
-  default     = ""
+  type        = bool
+  default     = null
 }
 
 variable "max_failover_replication_time_lag" {
   description = "max_failover_replication_time_lag"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
 
 variable "public_access_prometheus" {
@@ -570,7 +520,12 @@ variable "privatelink_pgbouncer" {
 
 variable "max_background_workers" {
   description = "timescaledb.max_background_workers"
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
 }
- 
+
+variable "migration" {
+  description = "Migrate data from existing server."
+  type        = list(any)
+  default     = []
+}
