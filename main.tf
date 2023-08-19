@@ -135,7 +135,7 @@ resource "aiven_pg" "this" {
   dynamic "tag" {
     for_each = var.tags
     content {
-      key   = lookup(tag.value, "key", null)
+      key   = lookup(tag.key, "key", null)
       value = lookup(tag.value, "value", null)
     }
   }
