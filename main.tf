@@ -142,6 +142,6 @@ resource "aiven_pg" "this" {
 
   lifecycle {
     # We are ignoring a migration block to it's one-off nature.
-    ignore_changes = [pg_user_config["migration"]]
+    ignore_changes = [pg_user_config[0].migration[0]]
   }
 }
