@@ -29,7 +29,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_pg"></a> [pg](#module\_pg) | ../.. | n/a |
 | <a name="module_pg_database"></a> [pg\_database](#module\_pg\_database) | ../../modules/pg_database | n/a |
 | <a name="module_pg_user"></a> [pg\_user](#module\_pg\_user) | ../../modules/pg_user | n/a |
@@ -41,7 +41,7 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_project"></a> [project](#input\_project) | Aiven Cloud Project Name. | `string` | n/a | yes |
 
 ## Outputs

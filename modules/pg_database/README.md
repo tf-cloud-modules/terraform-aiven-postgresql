@@ -17,15 +17,15 @@ module "pg_database" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.0.0, < 5.0.0 |
+| <a name="requirement_aiven"></a> [aiven](#requirement\_aiven) | >= 4.62.0, < 5.0.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.1.3 |
+| ---- | ------- |
+| <a name="provider_aiven"></a> [aiven](#provider\_aiven) | 4.66.0 |
 
 ## Modules
 
@@ -34,13 +34,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aiven_pg_database.this](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/pg_database) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created. | `bool` | `true` | no |
 | <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the service database. | `string` | n/a | yes |
 | <a name="input_lc_collate"></a> [lc\_collate](#input\_lc\_collate) | Default string sort order (LC\_COLLATE) of the database. | `string` | `"en_US.UTF-8"` | no |
@@ -52,7 +52,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_database_name"></a> [database\_name](#output\_database\_name) | The name of the service database. |
 | <a name="output_id"></a> [id](#output\_id) | The ID of this resource. |
 | <a name="output_lc_collate"></a> [lc\_collate](#output\_lc\_collate) | Default string sort order (LC\_COLLATE) of the database. |

@@ -11,6 +11,8 @@ This document describes the current status of this project.
 | ✔ | [Add pg_user_config.migration block]() ||
 | ✔ | [Add pg_user_config.pg block]() ||
 | ✔ | [Add pg_user_config.pgbouncer block]() ||
+| ✔ | [Add pg_user_config.pgaudit block]() ||
+| ✔ | [Add pg_user_config.pg_qualstats block]() ||
 | ✔ | [Add pg_user_config.pglookout block]() ||
 | ✔ | [Add pg_user_config.private_access block]() ||
 | ✔ | [Add pg_user_config.privatelink_access block]() ||
