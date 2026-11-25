@@ -96,7 +96,7 @@ variable "project" {
 variable "project_to_fork_from" {
   description = "Name of another project to fork a service from."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "project_vpc_id" {
@@ -108,7 +108,7 @@ variable "project_vpc_id" {
 variable "recovery_target_time" {
   description = "Recovery target time when forking a service."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "static_ips" {
@@ -137,7 +137,7 @@ variable "service_log" {
 variable "service_to_fork_from" {
   description = "Name of another service to fork from."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "shared_buffers_percentage" {
@@ -149,7 +149,7 @@ variable "shared_buffers_percentage" {
 variable "synchronous_replication" {
   description = "Synchronous replication type."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "switchover_windows" {
@@ -173,7 +173,7 @@ variable "termination_protection" {
 variable "variant" {
   description = "Variant of the PostgreSQL service, may affect the features that are exposed by default."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "work_mem" {
@@ -269,7 +269,7 @@ variable "deadlock_timeout" {
 variable "default_toast_compression" {
   description = "default_toast_compression"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "idle_in_transaction_session_timeout" {
@@ -299,7 +299,7 @@ variable "io_max_concurrency" {
 variable "io_method" {
   description = "EXPERIMENTAL: Controls the way that data files are accessed. One of `worker`, `io_uring`, `sync`. PostgreSQL 18 and up only. Changing this parameter causes a service restart."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "io_workers" {
@@ -323,13 +323,13 @@ variable "log_autovacuum_min_duration" {
 variable "log_error_verbosity" {
   description = "log_error_verbosity"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "log_line_prefix" {
   description = "log_line_prefix"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "log_min_duration_statement" {
@@ -437,7 +437,7 @@ variable "max_worker_processes" {
 variable "password_encryption" {
   description = "Chooses the algorithm for encrypting passwords. One of `md5`, `scram-sha-256`."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "pg_partman_bgw__dot__interval" {
@@ -449,25 +449,25 @@ variable "pg_partman_bgw__dot__interval" {
 variable "pg_partman_bgw__dot__role" {
   description = ""
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "pg_stat_plans__dot__track" {
   description = "Controls which statements' plans are tracked by pg_stat_plans. One of `top`, `all`, `none`."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "pg_stat_statements__dot__track" {
   description = "pg_stat_statements__dot__track"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "synchronous_commit" {
   description = "Sets the current transaction's synchronization level. One of `off`, `local`, `remote_write`, `remote_apply`, `on`. Takes precedence over `synchronous_replication`."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "temp_file_limit" {
@@ -479,7 +479,7 @@ variable "temp_file_limit" {
 variable "timezone" {
   description = "timezone"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "track_activity_query_size" {
@@ -491,19 +491,19 @@ variable "track_activity_query_size" {
 variable "track_commit_timestamp" {
   description = "track_commit_timestamp"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "track_functions" {
   description = "track_functions"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "track_io_timing" {
   description = "track_io_timing"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "wal_sender_timeout" {
@@ -545,7 +545,7 @@ variable "pgaudit_log_client" {
 variable "pgaudit_log_level" {
   description = "Specifies the log level that will be used for log entries. One of `debug1`-`debug5`, `info`, `log`, `notice`, `warning`."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "pgaudit_log_max_string_length" {
@@ -599,7 +599,7 @@ variable "pgaudit_log_statement_once" {
 variable "pgaudit_role" {
   description = "Specifies the master role to use for object audit logging."
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "autodb_idle_timeout" {
@@ -617,7 +617,7 @@ variable "autodb_max_db_connections" {
 variable "autodb_pool_mode" {
   description = "autodb_pool_mode"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "autodb_pool_size" {
