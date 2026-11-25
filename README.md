@@ -117,7 +117,7 @@ No modules.
 | <a name="input_pg_stat_plans__dot__track"></a> [pg\_stat\_plans\_\_dot\_\_track](#input\_pg\_stat\_plans\_\_dot\_\_track) | Controls which statements' plans are tracked by pg\_stat\_plans. One of `top`, `all`, `none`. | `string` | `null` | no |
 | <a name="input_pg_stat_plans_enable"></a> [pg\_stat\_plans\_enable](#input\_pg\_stat\_plans\_enable) | Enable the pg\_stat\_plans extension to track execution plans for SQL queries. Changing this parameter causes a service restart. | `bool` | `null` | no |
 | <a name="input_pg_stat_statements__dot__track"></a> [pg\_stat\_statements\_\_dot\_\_track](#input\_pg\_stat\_statements\_\_dot\_\_track) | pg\_stat\_statements\_\_dot\_\_track | `string` | `null` | no |
-| <a name="input_pg_version"></a> [pg\_version](#input\_pg\_version) | PostgreSQL major version. | `string` | `"14"` | no |
+| <a name="input_pg_version"></a> [pg\_version](#input\_pg\_version) | PostgreSQL major version. | `string` | `"18"` | no |
 | <a name="input_pgaudit_feature_enabled"></a> [pgaudit\_feature\_enabled](#input\_pgaudit\_feature\_enabled) | Enable pgaudit extension. When enabled, pgaudit extension will be automatically installed. Otherwise, extension will be uninstalled but auditing configurations will be preserved. | `bool` | `null` | no |
 | <a name="input_pgaudit_log"></a> [pgaudit\_log](#input\_pgaudit\_log) | Specifies which classes of statements will be logged by session audit logging. | `list(string)` | `[]` | no |
 | <a name="input_pgaudit_log_catalog"></a> [pgaudit\_log\_catalog](#input\_pgaudit\_log\_catalog) | Specifies that session logging should be enabled in the case where all relations in a statement are in pg\_catalog. | `bool` | `null` | no |

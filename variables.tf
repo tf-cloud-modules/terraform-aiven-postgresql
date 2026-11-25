@@ -79,7 +79,7 @@ variable "pg_stat_plans_enable" {
 variable "pg_version" {
   description = "PostgreSQL major version."
   type        = string
-  default     = "14"
+  default     = "18"
 }
 
 variable "plan" {

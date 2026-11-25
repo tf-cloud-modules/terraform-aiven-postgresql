@@ -34,6 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Raise aiven/aiven provider constraint to `>= 4.62.0, < 5.0.0` in the root module and
   all submodules (minimum version providing the new fields, validated against 4.66.0).
+- **Breaking:** change the default PostgreSQL major version from 14 (EOL) to 18 for
+  newly created services.
 
 ## [2.0.1] - 2025-04-03
 
