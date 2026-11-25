@@ -36,6 +36,11 @@ output "password" {
   value       = try(aiven_pg_user.this[0].password, "")
 }
 
+output "password_encryption_type" {
+  description = "The password hashing algorithm used for this PostgreSQL user, derived from the stored password hash. The possible values are `md5`, `scram-sha-256` and `unknown`."
+  value       = try(aiven_pg_user.this[0].password_encryption_type, "")
+}
+
 output "pg_allow_replication" {
   description = "Defines whether replication is allowed."
   value       = try(aiven_pg_user.this[0].pg_allow_replication, "")

@@ -1,6 +1,7 @@
 resource "aiven_pg" "this" {
   count                   = var.create ? 1 : 0
   cloud_name              = var.cloud_name
+  cmk_id                  = var.cmk_id
   maintenance_window_dow  = var.maintenance_window_dow
   maintenance_window_time = var.maintenance_window_time
   plan                    = var.plan
@@ -11,11 +12,18 @@ resource "aiven_pg" "this" {
   termination_protection  = var.termination_protection
 
   pg_user_config {
+    backup_interval_hours     = var.backup_interval_hours
+    backup_retention_days     = var.backup_retention_days
+    enable_ha_replica_dns     = var.enable_ha_replica_dns
     enable_ipv6               = var.enable_ipv6
     ip_filter                 = var.ip_filter
+    ip_filter_string          = var.ip_filter_string
+    node_count                = var.node_count
+    pg_stat_plans_enable      = var.pg_stat_plans_enable
     pg_version                = var.pg_version
     project_to_fork_from      = var.project_to_fork_from
     recovery_target_time      = var.recovery_target_time
+    service_log               = var.service_log
     service_to_fork_from      = var.service_to_fork_from
     shared_buffers_percentage = var.shared_buffers_percentage
     synchronous_replication   = var.synchronous_replication
@@ -25,14 +33,15 @@ resource "aiven_pg" "this" {
     dynamic "migration" {
       for_each = var.migration
       content {
-        dbname     = lookup(migration.value, "dbname", null)
-        host       = lookup(migration.value, "host", null)
-        ignore_dbs = lookup(migration.value, "ignore_dbs", null)
-        method     = lookup(migration.value, "method", null)
-        password   = lookup(migration.value, "password", null)
-        port       = lookup(migration.value, "port", null)
-        ssl        = lookup(migration.value, "ssl", null)
-        username   = lookup(migration.value, "username", null)
+        dbname       = lookup(migration.value, "dbname", null)
+        host         = lookup(migration.value, "host", null)
+        ignore_dbs   = lookup(migration.value, "ignore_dbs", null)
+        ignore_roles = lookup(migration.value, "ignore_roles", null)
+        method       = lookup(migration.value, "method", null)
+        password     = lookup(migration.value, "password", null)
+        port         = lookup(migration.value, "port", null)
+        ssl          = lookup(migration.value, "ssl", null)
+        username     = lookup(migration.value, "username", null)
       }
     }
 
@@ -53,11 +62,17 @@ resource "aiven_pg" "this" {
       deadlock_timeout                    = var.deadlock_timeout
       default_toast_compression           = var.default_toast_compression
       idle_in_transaction_session_timeout = var.idle_in_transaction_session_timeout
+      io_combine_limit                    = var.io_combine_limit
+      io_max_combine_limit                = var.io_max_combine_limit
+      io_max_concurrency                  = var.io_max_concurrency
+      io_method                           = var.io_method
+      io_workers                          = var.io_workers
       jit                                 = var.jit
       log_autovacuum_min_duration         = var.log_autovacuum_min_duration
       log_error_verbosity                 = var.log_error_verbosity
       log_line_prefix                     = var.log_line_prefix
       log_min_duration_statement          = var.log_min_duration_statement
+      max_connections                     = var.max_connections
       max_files_per_process               = var.max_files_per_process
       max_locks_per_transaction           = var.max_locks_per_transaction
       max_logical_replication_workers     = var.max_logical_replication_workers
@@ -70,11 +85,15 @@ resource "aiven_pg" "this" {
       max_stack_depth                     = var.max_stack_depth
       max_standby_archive_delay           = var.max_standby_archive_delay
       max_standby_streaming_delay         = var.max_standby_streaming_delay
+      max_sync_workers_per_subscription   = var.max_sync_workers_per_subscription
       max_wal_senders                     = var.max_wal_senders
       max_worker_processes                = var.max_worker_processes
+      password_encryption                 = var.password_encryption
       pg_partman_bgw__dot__interval       = var.pg_partman_bgw__dot__interval
       pg_partman_bgw__dot__role           = var.pg_partman_bgw__dot__role
+      pg_stat_plans__dot__track           = var.pg_stat_plans__dot__track
       pg_stat_statements__dot__track      = var.pg_stat_statements__dot__track
+      synchronous_commit                  = var.synchronous_commit
       temp_file_limit                     = var.temp_file_limit
       timezone                            = var.timezone
       track_activity_query_size           = var.track_activity_query_size
@@ -85,20 +104,48 @@ resource "aiven_pg" "this" {
       wal_writer_delay                    = var.wal_writer_delay
     }
 
+    pgaudit {
+      feature_enabled        = var.pgaudit_feature_enabled
+      log                    = var.pgaudit_log
+      log_catalog            = var.pgaudit_log_catalog
+      log_client             = var.pgaudit_log_client
+      log_level              = var.pgaudit_log_level
+      log_max_string_length  = var.pgaudit_log_max_string_length
+      log_nested_statements  = var.pgaudit_log_nested_statements
+      log_parameter          = var.pgaudit_log_parameter
+      log_parameter_max_size = var.pgaudit_log_parameter_max_size
+      log_relation           = var.pgaudit_log_relation
+      log_rows               = var.pgaudit_log_rows
+      log_statement          = var.pgaudit_log_statement
+      log_statement_once     = var.pgaudit_log_statement_once
+      role                   = var.pgaudit_role
+    }
+
     pgbouncer {
       autodb_idle_timeout       = var.autodb_idle_timeout
       autodb_max_db_connections = var.autodb_max_db_connections
       autodb_pool_mode          = var.autodb_pool_mode
       autodb_pool_size          = var.autodb_pool_size
       ignore_startup_parameters = var.ignore_startup_parameters
+      max_prepared_statements   = var.max_prepared_statements
       min_pool_size             = var.min_pool_size
+      server_connect_timeout    = var.server_connect_timeout
       server_idle_timeout       = var.server_idle_timeout
       server_lifetime           = var.server_lifetime
+      server_login_retry        = var.server_login_retry
       server_reset_query_always = var.server_reset_query_always
     }
 
     pglookout {
       max_failover_replication_time_lag = var.max_failover_replication_time_lag
+    }
+
+    pg_qualstats {
+      enabled                = var.pg_qualstats_enabled
+      min_err_estimate_num   = var.pg_qualstats_min_err_estimate_num
+      min_err_estimate_ratio = var.pg_qualstats_min_err_estimate_ratio
+      track_constants        = var.pg_qualstats_track_constants
+      track_pg_catalog       = var.pg_qualstats_track_pg_catalog
     }
 
     public_access {
@@ -117,6 +164,15 @@ resource "aiven_pg" "this" {
       prometheus = var.privatelink_prometheus
       pg         = var.privatelink_pg
       pgbouncer  = var.privatelink_pgbouncer
+    }
+
+    dynamic "switchover_windows" {
+      for_each = var.switchover_windows
+      content {
+        dow        = lookup(switchover_windows.value, "dow", null)
+        start_time = lookup(switchover_windows.value, "start_time", null)
+        end_time   = lookup(switchover_windows.value, "end_time", null)
+      }
     }
 
     timescaledb {
